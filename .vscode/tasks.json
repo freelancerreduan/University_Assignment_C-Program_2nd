@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "C/C++: gcc.exe build active file",
+      "type": "cppbuild",
+      "command": "C:\\mingw64\\bin\\gcc.exe",
+      "args": ["-Wall", "-g", "${file}", "-o", "${fileDirname}\\${fileBasenameNoExtension}.exe", "-lm"],
+      "options": { "cwd": "C:\\mingw64\\bin" },
+      "problemMatcher": ["$gcc"],
+      "detail": "Compile with gcc (C:\\mingw64)"
+    },
+    {
+      "label": "C: Compile & Run",
+      "type": "process",
+      "command": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+      "dependsOn": "C/C++: gcc.exe build active file",
+      "group": { "kind": "build", "isDefault": true },
+      "presentation": { "reveal": "always", "focus": true, "panel": "dedicated", "clear": true },
+      "problemMatcher": []
+    }
+  ]
+}
